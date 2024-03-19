@@ -6,7 +6,7 @@ import './Tab1.css';
 const Tab1: React.FC = () => {
   return (
     <IonCard>
-    <img alt="Silhouette of mountains" src="../src/assets/img/love.jpg" />
+    <img alt="Silhouette of mountains" src="../src/assets/img/love.jpg"/>
     <IonCardHeader>
       <IonCardTitle>Honey Grace Dapaton </IonCardTitle>
       <IonCardSubtitle>Student</IonCardSubtitle>
