@@ -1,25 +1,33 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab2.css';
+import React, { useState } from 'react';
+import { IonContent, IonButton, IonGrid, IonRow, IonCol } from '@ionic/react';
+const ClickCounter = () => {
+  const [count, setCount] = useState(0);
 
-const Tab2: React.FC = () => {
+  const incrementCounter = () => {
+    setCount(count + 1);
+  };
+
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tab 2</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 2</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
-      </IonContent>
-    </IonPage>
+    <IonContent className="ion-padding">
+      <IonGrid>
+        <IonRow>
+          <IonCol size="12" className="ion-text-center">
+            <h2>Click Counter</h2>
+          </IonCol>
+        </IonRow>
+        <IonRow>
+          <IonCol size="12" className="ion-text-center">
+            <h3>Clicks: {count}</h3>
+          </IonCol>
+        </IonRow>
+        <IonRow>
+          <IonCol size="12" className="ion-text-center">
+            <IonButton onClick={incrementCounter}>Click Me!</IonButton>
+          </IonCol>
+        </IonRow>
+      </IonGrid>
+    </IonContent>
   );
 };
 
-export default Tab2;
+export default ClickCounter;
