@@ -1,7 +1,5 @@
-import {
-    //Initial Components
-    IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
-} from '@ionic/react';
+import React from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
 
 // CSS
 //import './profile.css';
@@ -14,17 +12,13 @@ import {
             <IonTitle>Home</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent fullscreen>
-          <IonHeader collapse="condense">
-            <IonToolbar>
-              <IonTitle size="large">Home</IonTitle>
-            </IonToolbar>
-          </IonHeader>
+        <IonContent className="ion-padding">
+          <h2>Welcome to Simple App</h2>
+          <p> Let's Go!.</p>
+          <IonButton expand="block" routerLink="/tab1.tsx">Go to My Profile</IonButton>
         </IonContent>
       </IonPage>
     );
   };
-
-  //
   export default Home;
 
