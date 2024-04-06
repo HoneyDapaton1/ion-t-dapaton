@@ -1,7 +1,7 @@
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton, IonAlert, IonActionSheet } from '@ionic/react';
 import React, { useState } from 'react';
 
-const Profile: React.FC = () => {
+const Profilepage: React.FC = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [showActionSheet, setShowActionSheet] = useState(false);
 
@@ -57,4 +57,4 @@ const Profile: React.FC = () => {
   );
 }
 
-export default Profile;
+export default Profilepage;

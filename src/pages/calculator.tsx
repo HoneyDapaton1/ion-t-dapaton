@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol } from '@ionic/react';
 
 
-const calculator: React.FC = () => {
+const Calculator: React.FC = () => {
   const [input, setInput] = useState(''); // State to store user input
   const [result, setResult] = useState(''); // State to store calculation result
 
@@ -78,4 +78,4 @@ const calculator: React.FC = () => {
   );
 };
 
-export default calculator;
+export default Calculator;
