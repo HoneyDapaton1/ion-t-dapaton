@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IonContent, IonButton, IonGrid, IonRow, IonCol } from '@ionic/react';
-const ClickCounter = () => {
+const clickcounter = () => {
   const [count, setCount] = useState(0);
 
   const incrementCounter = () => {
@@ -30,4 +30,4 @@ const ClickCounter = () => {
   );
 };
 
-export default ClickCounter;
+export default clickcounter;
