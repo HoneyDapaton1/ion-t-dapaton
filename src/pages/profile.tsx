@@ -1,13 +1,13 @@
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton, IonAlert, IonActionSheet } from '@ionic/react';
 import React, { useState } from 'react';
 
-const Profilepage: React.FC = () => {
+const profile: React.FC = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [showActionSheet, setShowActionSheet] = useState(false);
 
   return (
     <IonCard>
-      <img alt="Demon's Slayer Love Hashira" src={require('../assets/img/love.jpg').default} />
+      <img alt="" src ="../src/assets/img/love.jpg"/>
       <IonCardHeader>
         <IonCardTitle>Honey Grace C. Dapaton</IonCardTitle>
         <IonCardSubtitle>Student</IonCardSubtitle>
@@ -57,4 +57,4 @@ const Profilepage: React.FC = () => {
   );
 }
 
-export default Profilepage;
+export default profile;
