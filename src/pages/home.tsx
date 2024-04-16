@@ -1,24 +1,56 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
+import {
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonThumbnail, IonIcon, ion
+} from '@ionic/react';
+import { calculatorOutline, codeSlashOutline, heartHalfOutline } from 'ionicons/icons';
 
-// CSS
-//import './profile.css';
+function home () {
+  return (
+    <IonCard>
+      <IonCardHeader>
+        <IonCardTitle>Welcome to APPLET</IonCardTitle>
+        <IonCardSubtitle>Click buttons to proceed</IonCardSubtitle>
+      </IonCardHeader>
+      <IonCardContent>
+        <IonList>
+          <IonItem>
+            <IonThumbnail slot="start">
+            <IonIcon aria-hidden="true" icon={heartHalfOutline} />
+            </IonThumbnail>
+            <IonLabel>Click Counter</IonLabel>
+          </IonItem>
 
-  const Home: React.FC = () => {
-    return (
-      <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Home</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent className="ion-padding">
-          <h2>Welcome to my Simple App</h2>
-          <p> Let's Go!</p>
-          <IonButton expand="block" routerLink="/profile.tsx">Go to My Profile</IonButton>
-        </IonContent>
-      </IonPage>
-    );
-  };
-  export default Home;
+          <IonItem>
+            <IonThumbnail slot="start">
+            <IonIcon aria-hidden="true" icon={calculatorOutline} />
+            </IonThumbnail>
+            <IonLabel>Calculator</IonLabel>
+          </IonItem>
 
+          <IonItem>
+            <IonThumbnail slot="start">
+            <IonIcon aria-hidden="true" icon={codeSlashOutline} />
+            </IonThumbnail>
+            <IonLabel>Blank</IonLabel>
+          </IonItem>
+
+          <IonItem lines="none">
+            <IonThumbnail slot="start">
+            <IonIcon aria-hidden="true" icon={codeSlashOutline} />
+            </IonThumbnail>
+            <IonLabel>Blank</IonLabel>
+          </IonItem>
+        </IonList>
+      </IonCardContent>
+    </IonCard>
+  );
+}
+export default home;
