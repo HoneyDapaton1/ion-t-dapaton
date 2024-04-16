@@ -13,9 +13,9 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from 
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
-          <h2>Welcome to Simple App</h2>
-          <p> Let's Go!.</p>
-          <IonButton expand="block" routerLink="/tab1.tsx">Go to My Profile</IonButton>
+          <h2>Welcome to my Simple App</h2>
+          <p> Let's Go!</p>
+          <IonButton expand="block" routerLink="/profile.tsx">Go to My Profile</IonButton>
         </IonContent>
       </IonPage>
     );
