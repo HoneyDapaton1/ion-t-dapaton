@@ -8,7 +8,7 @@ import {
   IonItem,
   IonLabel,
   IonList,
-  IonThumbnail, IonIcon, ion
+  IonThumbnail, IonIcon,
 } from '@ionic/react';
 import { calculatorOutline, codeSlashOutline, heartHalfOutline } from 'ionicons/icons';
 
