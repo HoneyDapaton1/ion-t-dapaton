@@ -1,56 +1,66 @@
 import React from 'react';
-import {
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonThumbnail, IonIcon, ion
+import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonCard,IonCardContent,IonCardHeader,IonCardSubtitle,IonCardTitle,IonItem,IonLabel,IonList,IonThumbnail,IonIcon, IonRouterLink
 } from '@ionic/react';
-import { calculatorOutline, codeSlashOutline, heartHalfOutline } from 'ionicons/icons';
+
+import { calculatorOutline, closeOutline, speedometerOutline } from 'ionicons/icons';
 
 function home () {
   return (
-    <IonCard>
-      <IonCardHeader>
-        <IonCardTitle>Welcome to APPLET</IonCardTitle>
-        <IonCardSubtitle>Click buttons to proceed</IonCardSubtitle>
-      </IonCardHeader>
-      <IonCardContent>
-        <IonList>
-          <IonItem>
-            <IonThumbnail slot="start">
-            <IonIcon aria-hidden="true" icon={heartHalfOutline} />
-            </IonThumbnail>
-            <IonLabel>Click Counter</IonLabel>
-          </IonItem>
+    <IonPage>
+    <IonHeader>
+      <IonToolbar>
+        <IonTitle>Home</IonTitle>
+      </IonToolbar>
+    </IonHeader>
+    <IonContent fullscreen>
+      <div className="welcome-text">
+        <h1>Welcome to my App!</h1>
+        <IonCard className="custom-card">
+          <IonCardContent>
+            <IonList>
+              <IonItem>
+                <IonThumbnail slot="start">
+                <IonRouterLink href="./clickcounter">
+                <IonIcon icon={speedometerOutline} style={{ fontSize: '4rem' }} />
+                    </IonRouterLink>
+                </IonThumbnail>
+                <IonLabel>Click Counter</IonLabel>
+              </IonItem>
+              <br />
+              <IonItem>
+                <IonThumbnail slot="start">
+                <IonRouterLink href="./calculator">
+                <IonIcon icon={calculatorOutline} style={{ fontSize: '4rem' }} />
+                    </IonRouterLink>
+                </IonThumbnail>
+                <IonLabel>Calculator</IonLabel>
+              </IonItem>
+              <br />
+              <IonItem>
+                <IonThumbnail slot="start">
+                <IonRouterLink href="">
+                <IonIcon icon={closeOutline} style={{ fontSize: '4rem' }} />
+                    </IonRouterLink>
+                </IonThumbnail>
+                <IonLabel>Blank</IonLabel>
+              </IonItem>
+              <br />
+              <IonItem>
+                <IonThumbnail slot="start">
+                <IonRouterLink href="">
+                <IonIcon icon={closeOutline} style={{ fontSize: '4rem' }} />
+                    </IonRouterLink>
+                </IonThumbnail>
+                <IonLabel>Blank</IonLabel>
+              </IonItem>
 
-          <IonItem>
-            <IonThumbnail slot="start">
-            <IonIcon aria-hidden="true" icon={calculatorOutline} />
-            </IonThumbnail>
-            <IonLabel>Calculator</IonLabel>
-          </IonItem>
 
-          <IonItem>
-            <IonThumbnail slot="start">
-            <IonIcon aria-hidden="true" icon={codeSlashOutline} />
-            </IonThumbnail>
-            <IonLabel>Blank</IonLabel>
-          </IonItem>
-
-          <IonItem lines="none">
-            <IonThumbnail slot="start">
-            <IonIcon aria-hidden="true" icon={codeSlashOutline} />
-            </IonThumbnail>
-            <IonLabel>Blank</IonLabel>
-          </IonItem>
-        </IonList>
-      </IonCardContent>
-    </IonCard>
-  );
-}
+            </IonList>
+          </IonCardContent>
+        </IonCard>
+      </div>
+    </IonContent>
+  </IonPage>
+);
+};
 export default home;
