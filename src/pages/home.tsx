@@ -2,7 +2,7 @@ import React from 'react';
 import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonCard,IonCardContent,IonCardHeader,IonCardSubtitle,IonCardTitle,IonItem,IonLabel,IonList,IonThumbnail,IonIcon, IonRouterLink
 } from '@ionic/react';
 
-import { calculatorOutline, closeOutline, speedometerOutline } from 'ionicons/icons';
+import { calculatorOutline, closeOutline, listOutline, speedometerOutline } from 'ionicons/icons';
 
 function home () {
   return (
@@ -38,11 +38,11 @@ function home () {
               <br />
               <IonItem>
                 <IonThumbnail slot="start">
-                <IonRouterLink href="">
-                <IonIcon icon={closeOutline} style={{ fontSize: '4rem' }} />
+                <IonRouterLink href="./todolist">
+                <IonIcon icon={listOutline} style={{ fontSize: '4rem' }} />
                     </IonRouterLink>
                 </IonThumbnail>
-                <IonLabel>Blank</IonLabel>
+                <IonLabel>Todo list</IonLabel>
               </IonItem>
               <br />
               <IonItem>
