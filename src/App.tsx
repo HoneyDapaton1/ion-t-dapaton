@@ -16,6 +16,7 @@ import profile from './pages/profile';
 import clickcounter from './pages/clickcounter';
 import calculator from './pages/calculator';
 import todolist from './pages/todolist';
+import qoutegenerator from './pages/qoutegenerator';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,6 +36,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import QuoteGenerator from './pages/qoutegenerator';
 
 setupIonicReact();
 
@@ -51,6 +53,7 @@ const App: React.FC = () => (
           <Route exact path="/clickcounter" component={clickcounter}/>
           <Route exact path="/calculator" component={calculator} />
           <Route exact path="/todolist" component={todolist} />
+          <Route exact path="/qoutegenerator" component={QuoteGenerator} />
           
         </IonRouterOutlet>
 
