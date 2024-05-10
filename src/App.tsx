@@ -1,4 +1,4 @@
-import { Route, Redirect} from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
@@ -10,13 +10,14 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { calculatorOutline, codeSlashOutline, heartHalfOutline, home, personCircleOutline,} from 'ionicons/icons';
-import Home from './pages/home';
-import profile from './pages/profile';
-import clickcounter from './pages/clickcounter';
-import calculator from './pages/calculator';
-import todolist from './pages/todolist';
-import qoutegenerator from './pages/qoutegenerator';
+import { home, calculatorOutline, ellipse, fingerPrintOutline, personCircleOutline, square, triangle } from 'ionicons/icons';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import ClickCounter from './pages/ClickCounter';
+import Calculator from './pages/Calculator';
+import Todolist from './pages/Todolist/Todolist';
+import QuotesGenerator from './pages/QuotesGenerator/QuotesGenerator';
+import Notes from './pages/Notes/Notes';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -36,7 +37,6 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import QuoteGenerator from './pages/qoutegenerator';
 
 setupIonicReact();
 
@@ -45,45 +45,64 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Redirect to="/home" />
-
-          {/* Route declarations */}
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/profile" component={profile} />
-          <Route exact path="/clickcounter" component={clickcounter}/>
-          <Route exact path="/calculator" component={calculator} />
-          <Route exact path="/todolist" component={todolist} />
-          <Route exact path="/qoutegenerator" component={QuoteGenerator} />
           
-        </IonRouterOutlet>
+          <Route exact path="/clickcounter">
+            <ClickCounter />
+          </Route>
+          <Route exact path="/calculator">
+            <Calculator />
+          </Route>
+          <Route exact path="/todolist">
+            <Todolist />
+          </Route>
+          <Route exact path="/quotesgenerator">
+            <QuotesGenerator />
+          </Route>
+          <Route exact path="/notes">
+            <Notes />
+          </Route>
 
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
+          </Route>
+
+        </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          {/* Tab buttons */}
-          <IonTabButton tab="Home" href="/home">
+
+          <IonTabButton tab="home" href="/home">
             <IonIcon aria-hidden="true" icon={home} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
-
-          <IonTabButton tab="Blank" href="">
-            <IonIcon aria-hidden="true" icon={codeSlashOutline} />
-            <IonLabel>Blank</IonLabel>
-          </IonTabButton>
-
-          <IonTabButton tab="Profile" href="/profile">
+          
+          {/*
+          <IonTabButton tab="profile" href="/profile">
             <IonIcon aria-hidden="true" icon={personCircleOutline} />
             <IonLabel>Profile</IonLabel>
           </IonTabButton>
-        
- {/*         <IonTabButton tab="clickcounter" href="/clickcounter">
-            <IonIcon aria-hidden="true" icon={heartHalfOutline} />
+          <IonTabButton tab="click_counter" href="/click_counter">
+            <IonIcon aria-hidden="true" icon={fingerPrintOutline} />
             <IonLabel>Click Counter</IonLabel>
           </IonTabButton>
-
-          <IonTabButton tab="Calculator" href="/calculator">
+          <IonTabButton tab="calculator" href="/calculator">
             <IonIcon aria-hidden="true" icon={calculatorOutline} />
             <IonLabel>Calculator</IonLabel>
           </IonTabButton>
-*/}          
+          */}
+
+          <IonTabButton tab="" href="/">
+            <IonIcon aria-hidden="true" />
+            <IonLabel></IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="profile" href="/profile">
+            <IonIcon aria-hidden="true" icon={personCircleOutline} />
+            <IonLabel>Profile</IonLabel>
+          </IonTabButton>
 
         </IonTabBar>
       </IonTabs>

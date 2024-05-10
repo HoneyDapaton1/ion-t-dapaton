@@ -1,33 +1,53 @@
 import React, { useState } from 'react';
-import { IonContent, IonButton, IonGrid, IonRow, IonCol } from '@ionic/react';
-const clickcounter = () => {
-  const [count, setCount] = useState(0);
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol, IonBackButton, IonButtons } from '@ionic/react';
+
+const ClickCounter: React.FC = () => {
+  const [counter, setCounter] = useState<number>(0);
 
   const incrementCounter = () => {
-    setCount(count + 1);
+    setCounter(counter + 1);
+  };
+
+  const resetCounter = () => {
+    setCounter(0);
   };
 
   return (
-    <IonContent className="ion-padding">
-      <IonGrid>
-        <IonRow>
-          <IonCol size="12" className="ion-text-center">
-            <h2>Click Counter</h2>
-          </IonCol>
-        </IonRow>
-        <IonRow>
-          <IonCol size="12" className="ion-text-center">
-            <h3>Clicks: {count}</h3>
-          </IonCol>
-        </IonRow>
-        <IonRow>
-          <IonCol size="12" className="ion-text-center">
-            <IonButton onClick={incrementCounter}>Click Me!</IonButton>
-          </IonCol>
-        </IonRow>
-      </IonGrid>
-    </IonContent>
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/" />
+          </IonButtons>
+          <IonTitle>Click Counter</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
+        <IonGrid>
+          <IonRow className="ion-align-items-center">
+            <IonCol size="12" className="ion-text-center">
+              <img src="https://via.placeholder.com/150" alt="Button" style={{ width: '150px', height: '150px' }} />
+            </IonCol>
+          </IonRow>
+          <IonRow className="ion-align-items-center">
+            <IonCol size="12" className="ion-text-center">
+              <IonButton onClick={incrementCounter} expand="block" color="success" style={{ fontSize: '24px' }}>Click Me!</IonButton>
+            </IonCol>
+          </IonRow>
+          <IonRow className="ion-align-items-center">
+            <IonCol size="12" className="ion-text-center">
+              <p style={{ fontSize: '32px' }}>Counter: {counter}</p>
+            </IonCol>
+          </IonRow>
+          <IonRow className="ion-align-items-center">
+            <IonCol size="12" className="ion-text-center">
+              <IonButton onClick={resetCounter} expand="block" color="danger" style={{ fontSize: '20px' }}>Reset</IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+      </IonContent>
+   </IonPage>
   );
 };
 
-export default clickcounter;
+export default ClickCounter;

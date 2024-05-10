@@ -22,42 +22,72 @@ import {
   IonTitle,
   IonToolbar,
   IonItemDivider,
-  IonSearchbar
+  IonSearchbar,
+  IonBadge
 } from '@ionic/react';
 
 //Custom CSS
-import './home.css';
+// import './Home.css';
 
 //Ionic Icons
-import { speedometerOutline,calculator,pencil, chatbubble, heartHalfOutline, listCircleOutline} from 'ionicons/icons';
+import { speedometerOutline,calculator,pencil, chatbubble, logoIonic, logoReact, logoFirebase, readerOutline} from 'ionicons/icons';
 
 //Additional Routes
-import ClickCounter from './clickcounter';
+// import Click_counter from './Click_counter';
+
 
 const cardData = [
   {
     title: 'Click Counter',
-    icon: heartHalfOutline,
+    icon: speedometerOutline,
     subtitle: 'Applet #1',
-    link: '/clickcounter'
+    link: '/clickcounter',
+    tags: {
+      tag1: logoIonic,
+      tag2: logoReact
+    }
+
   },
   {
     title: 'Calculator',
     icon: calculator,
     subtitle: 'Applet #2',
-    link: '/calculator'
+    link: '/calculator',
+    tags: {
+      tag1: logoIonic,
+      tag2: logoReact
+    }
   },
   {
     title: 'To Do List',
-    icon: listCircleOutline,
+    icon: pencil,
     subtitle: 'Applet #3',
-    link: '/todolist'
+    link: '/todolist',
+    tags: {
+      tag1: logoIonic,
+      tag2: logoReact
+    }
   },
   {
-    title: 'Quotes Generator',
+    title: 'Quote Generator',
     icon: chatbubble,
     subtitle: 'Applet #4',
-    link: '/qoutegenerator'
+    link: '/quotesgenerator',
+    tags: {
+      tag1: logoIonic,
+      tag2: logoReact
+    }
+  },
+  {
+    title: 'Notes',
+    icon: readerOutline,
+    subtitle: 'Applet #5',
+    link: '/notes',
+    tags: {
+      tag1: logoIonic,
+      tag2: logoReact, 
+      tag3: logoFirebase 
+    }
   }
   
 ];
@@ -68,13 +98,13 @@ const cardData = [
     const [searchTerm, setSearchTerm] = useState<string>('');
 
     return (
-      <IonPage>
+      <IonPage className="home-page">
         <IonHeader>
           <IonToolbar>
             <IonTitle>Home</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent fullscreen>
+        <IonContent fullscreen className="home-content">
           <IonHeader collapse="condense">
             <IonToolbar>
               <IonTitle size="large">Home</IonTitle>
@@ -90,13 +120,13 @@ const cardData = [
           {cardData
             .filter((card) => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
             .map((card, index) => (
-              <IonCard key={index} href={card.link}>
+              <IonCard key={index} routerLink={card.link} routerDirection='forward' id="card_body">
                 <IonCardHeader>
                   <IonCardTitle>
                     <IonGrid>
                       <IonRow>
                         <IonCol push=".75">
-                          <IonIcon className="home-card-icon" icon={card.icon} color="primary" />
+                          <IonIcon className="home-card-icon" icon={card.icon} />
                         </IonCol>
                         <IonCol pull='3'>
                           <div className="home-card-title">{card.title}</div>
