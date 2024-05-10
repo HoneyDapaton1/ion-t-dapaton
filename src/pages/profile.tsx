@@ -2,10 +2,8 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonRow, IonCol } from '@ionic/react';
 
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonAlert, IonButton, IonActionSheet } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Profile.css';
-// Import the video file directly
-import selfIntroVideo from '../assets/img/self_intro_video.mp4';
+
+// import './Profile.css';
 
 const Profile: React.FC = () => {
   return (
@@ -26,7 +24,7 @@ const Profile: React.FC = () => {
 
       <IonRow>
         <IonCol size="4">
-          <img alt="Profile" id="profile_pic" src="https://raw.githubusercontent.com/HoneyDapaton1/ion-t-dapaton/qoutegenerater/src/assets/img/love.jpg" className="profile-pic-animation" />
+          <img alt="Profile" src="https://raw.githubusercontent.com/HoneyDapaton1/ion-t-dapaton/qoutegenerater/src/assets/img/love.jpg" className="profile-pic-animation" />
         </IonCol>
         <IonCol size="8">
           <IonCardHeader>
