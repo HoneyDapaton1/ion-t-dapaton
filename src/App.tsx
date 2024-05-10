@@ -46,6 +46,18 @@ const App: React.FC = () => (
       <IonTabs>
         <IonRouterOutlet>
           
+          <Route exact path="/ion-t-dapaton/">
+            <Redirect to="/ion-t-dapaton/home" />
+          </Route>
+          <Route exact path="/ion-t-dapaton/home">
+            <Home />
+          </Route>
+          <Route exact path="/ion-t-dapaton/profile">
+            <Profile />
+          </Route>
+
+
+
           <Route exact path="/ion-t-dapaton/clickcounter">
             <ClickCounter />
           </Route>
@@ -62,15 +74,6 @@ const App: React.FC = () => (
             <Notes />
           </Route>
 
-          <Route exact path="/ion-t-dapaton/">
-            <Redirect to="/ion-t-dapaton/home" />
-          </Route>
-          <Route exact path="/ion-t-dapaton/home">
-            <Home />
-          </Route>
-          <Route exact path="/ion-t-dapaton/profile">
-            <Profile />
-          </Route>
 
         </IonRouterOutlet>
         <IonTabBar slot="bottom">

@@ -1,60 +1,84 @@
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonButton, IonAlert, IonActionSheet } from '@ionic/react';
-import React, { useState } from 'react';
+// import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonRow, IonCol } from '@ionic/react';
 
-const profile: React.FC = () => {
-  const [showAlert, setShowAlert] = useState(false);
-  const [showActionSheet, setShowActionSheet] = useState(false);
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonAlert, IonButton, IonActionSheet } from '@ionic/react';
+import ExploreContainer from '../components/ExploreContainer';
+import './Profile.css';
+// Import the video file directly
+import selfIntroVideo from '../assets/img/self_intro_video.mp4';
 
+const Profile: React.FC = () => {
   return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Profile</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">Profile</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        
     <IonCard>
-      <img alt="" src ="../src/assets/img/love.jpg"/>
-      <IonCardHeader>
-        <IonCardTitle>Honey Grace C. Dapaton</IonCardTitle>
-        <IonCardSubtitle>Student</IonCardSubtitle>
-        <IonCardSubtitle>21</IonCardSubtitle>
-      </IonCardHeader>
-      <IonCardContent>Nothing more, nothing less.</IonCardContent>
 
-      <IonButton onClick={() => setShowAlert(true)} expand="block">Quick Facts</IonButton>
+      <IonRow>
+        <IonCol size="4">
+          <img alt="Profile" id="profile_pic" src="https://raw.githubusercontent.com/HoneyDapaton1/ion-t-dapaton/qoutegenerater/src/assets/img/love.jpg" className="profile-pic-animation" />
+        </IonCol>
+        <IonCol size="8">
+          <IonCardHeader>
+            <IonCardTitle>Honey Grace C. Dapaton</IonCardTitle>
+            <IonCardSubtitle>NBSC-BSIT Student</IonCardSubtitle>
+          </IonCardHeader>
+        </IonCol>
+      </IonRow>
+
+      <IonCardContent>&#x1F64C; Nothing more, nothing less. &#x1F64C;</IonCardContent>
+
+
+      <IonButton id="present-alert" expand="block" color="primary">Quick Facts</IonButton>
       <IonAlert
-        isOpen={showAlert}
-        onDidDismiss={() => setShowAlert(false)}
-        header="A Short Title Is Best"
-        subHeader="A Sub Header Is Optional"
-        message="A message should be a short, complete sentence."
-        buttons={['OK']}
-      />
+        trigger="present-alert"
+        header="Explore Quick Facts?"
+        subHeader="Unlock valuable insights"
+        message="Discover a wealth of information with Quick Facts."
+        buttons={['Learn More']}
+      ></IonAlert>
 
-      <IonButton onClick={() => setShowActionSheet(true)} expand="block">Open Action Sheet</IonButton>
+    <IonButton id="open-action-sheet" expand="block" color="light">Open Action Sheet</IonButton>
       <IonActionSheet
-        isOpen={showActionSheet}
-        onDidDismiss={() => setShowActionSheet(false)}
+        trigger="open-action-sheet"
         header="Actions"
         buttons={[
           {
             text: 'Delete',
             role: 'destructive',
-            handler: () => {
-              // Delete action
-            }
+            data: {
+              action: 'delete',
+            },
           },
           {
             text: 'Share',
-            handler: () => {
-              // Share action
-            }
+            data: {
+              action: 'share',
+            },
           },
           {
             text: 'Cancel',
             role: 'cancel',
-            handler: () => {
-              // Cancel action
-            }
-          }
+            data: {
+              action: 'cancel',
+            },
+          },
         ]}
-      />
+      ></IonActionSheet>
     </IonCard>
+        </IonContent>
+      </IonPage>
   );
-}
+};
 
-export default profile;
+export default Profile;
