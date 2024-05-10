@@ -151,7 +151,7 @@ const deleteNote = async (index: number) => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton defaultHref="/" />
+            <IonBackButton defaultHref="/ion-t-dapaton/home/" />
           </IonButtons>
           <IonTitle>Notes</IonTitle>
         </IonToolbar>

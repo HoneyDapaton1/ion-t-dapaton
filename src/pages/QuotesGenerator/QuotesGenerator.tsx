@@ -204,7 +204,7 @@ const deleteQuote = async (index: number) => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton defaultHref="/" />
+            <IonBackButton defaultHref="/ion-t-dapaton/home/" />
           </IonButtons>
           <IonTitle>Quotes Generator</IonTitle>
         </IonToolbar>
