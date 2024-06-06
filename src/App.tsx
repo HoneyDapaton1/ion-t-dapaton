@@ -11,10 +11,10 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { home, calculatorOutline, ellipse, fingerPrintOutline, personCircleOutline, square, triangle } from 'ionicons/icons';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import ClickCounter from './pages/ClickCounter';
-import Calculator from './pages/Calculator';
+import Home from './pages/home';
+import Profile from './pages/profile';
+import ClickCounter from './pages/clickcounter';
+import Calculator from './pages/calculator';
 import Todolist from './pages/Todolist/Todolist';
 import QuotesGenerator from './pages/QuotesGenerator/QuotesGenerator';
 import Notes from './pages/Notes/Notes';

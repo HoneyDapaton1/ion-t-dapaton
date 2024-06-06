@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import {
-  IonBackButton,
-  IonButton,
-  IonButtons,
   IonCard,
-  IonCardContent,
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
@@ -13,24 +9,17 @@ import {
   IonGrid,
   IonHeader,
   IonIcon,
-  IonInput,
-  IonItem,
-  IonLabel,
-  IonList,
   IonPage,
   IonRow,
   IonTitle,
   IonToolbar,
-  IonItemDivider,
   IonSearchbar,
-  IonBadge
 } from '@ionic/react';
 
-//Custom CSS
-// import './Home.css';
+import './home.css';
 
 //Ionic Icons
-import { speedometerOutline,calculator,pencil, chatbubble, logoIonic, logoReact, logoFirebase, readerOutline} from 'ionicons/icons';
+import { speedometerOutline,calculator,pencil, chatbubble, logoIonic, logoReact, logoFirebase, readerOutline, listCircleOutline} from 'ionicons/icons';
 
 //Additional Routes
 // import Click_counter from './Click_counter';
@@ -60,7 +49,7 @@ const cardData = [
   },
   {
     title: 'To Do List',
-    icon: pencil,
+    icon: listCircleOutline,
     subtitle: 'Applet #3',
     link: '/todolist',
     tags: {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol, IonBackButton, IonButtons, IonInput } from '@ionic/react';
 
-import './Calculator.css';
+import './calculator.css';
 
 const Calculator: React.FC = () => {
   const [input, setInput] = useState<string>('');
