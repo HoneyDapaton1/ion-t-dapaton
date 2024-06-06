@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {
   IonCard,
+  IonCardContent,
+  IonButton,
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
@@ -11,128 +13,92 @@ import {
   IonIcon,
   IonPage,
   IonRow,
+  IonSearchbar,
   IonTitle,
   IonToolbar,
-  IonSearchbar,
 } from '@ionic/react';
 
+import { speedometerOutline, calculator, chatbubble, listCircleOutline, readerOutline } from 'ionicons/icons';
 import './home.css';
-
-//Ionic Icons
-import { speedometerOutline,calculator,pencil, chatbubble, logoIonic, logoReact, logoFirebase, readerOutline, listCircleOutline} from 'ionicons/icons';
-
-//Additional Routes
-// import Click_counter from './Click_counter';
-
 
 const cardData = [
   {
     title: 'Click Counter',
-    icon: speedometerOutline,
-    subtitle: 'Applet #1',
-    link: '/clickcounter',
-    tags: {
-      tag1: logoIonic,
-      tag2: logoReact
-    }
-
+    subtitle: 'Click! Click! Click!',
+    link: '/ClickCounter',
+    imgSrc: '../src/assets/img/clickcounter.gif',
   },
   {
     title: 'Calculator',
-    icon: calculator,
-    subtitle: 'Applet #2',
-    link: '/calculator',
-    tags: {
-      tag1: logoIonic,
-      tag2: logoReact
-    }
+    subtitle: 'Calculate! Calculate! Calculate!',
+    link: '/Calculator',
+    imgSrc: '../src/assets/img/calculator.gif',
   },
   {
     title: 'To Do List',
-    icon: listCircleOutline,
-    subtitle: 'Applet #3',
-    link: '/todolist',
-    tags: {
-      tag1: logoIonic,
-      tag2: logoReact
-    }
+    subtitle: 'Work! Work! Work!',
+    link: '/TodoList',
+    imgSrc: '../src/assets/img/todolist.gif',
   },
   {
     title: 'Quote Generator',
-    icon: chatbubble,
-    subtitle: 'Applet #4',
-    link: '/quotesgenerator',
-    tags: {
-      tag1: logoIonic,
-      tag2: logoReact
-    }
+    subtitle: 'Get inspired!',
+    link: '/QuotesGenerator',
+    imgSrc: '../src/assets/img/qg.gif',
   },
   {
     title: 'Notes',
     icon: readerOutline,
-    subtitle: 'Applet #5',
-    link: '/notes',
-    tags: {
-      tag1: logoIonic,
-      tag2: logoReact, 
-      tag3: logoFirebase 
-    }
-  }
-  
+    subtitle: 'Take notes!',
+    link: '/Notes',
+    imgSrc: '../src/assets/img/note.gif',
+  },
 ];
 
-  const Home: React.FC = () => {
+const Home: React.FC = () => {
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
-    {/*Dynamic Search*/}
-    const [searchTerm, setSearchTerm] = useState<string>('');
-
-    return (
-      <IonPage className="home-page">
-        <IonHeader>
+  return (
+    <IonPage className="home-page">
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Home</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen className="home-content">
+        <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle>Home</IonTitle>
+            <IonTitle size="large">Home</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent fullscreen className="home-content">
-          <IonHeader collapse="condense">
-            <IonToolbar>
-              <IonTitle size="large">Home</IonTitle>
-            </IonToolbar>
-          </IonHeader>
-        {/*Dynamic Search*/}
-        <>
-          <IonSearchbar 
-            value={searchTerm} 
-            onIonInput={(e) => setSearchTerm(e.target.value ?? '')} 
-          />
-          
-          {cardData
-            .filter((card) => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
-            .map((card, index) => (
-              <IonCard key={index} routerLink={card.link} routerDirection='forward' id="card_body">
-                <IonCardHeader>
-                  <IonCardTitle>
-                    <IonGrid>
-                      <IonRow>
-                        <IonCol push=".75">
-                          <IonIcon className="home-card-icon" icon={card.icon} />
-                        </IonCol>
-                        <IonCol pull='3'>
-                          <div className="home-card-title">{card.title}</div>
-                          <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
-                        </IonCol>
-                      </IonRow>
-                    </IonGrid>
-                  </IonCardTitle>
-                </IonCardHeader>
-              </IonCard>
-          ))}
-        </>
-          </IonContent>
-        </IonPage>
-    );
-  };
-  
-  //
-  export default Home;
-  
+        <IonSearchbar
+          value={searchTerm}
+          onIonInput={(e) => setSearchTerm(e.target.value ?? '')}
+          className="searchbar"
+        />
+        <IonGrid className="card-grid">
+          <IonRow>
+            {cardData
+              .filter((card) => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
+              .map((card, index) => (
+                <IonCol size="13" size-md="3" size-lg="5" key={index}>
+                  <IonCard  routerLink={card.link} routerDirection="forward" className="card-body">
+                    <img alt={card.title} src={card.imgSrc} />
+                    <IonCardHeader className="card-header">
+                      <IonCardTitle className="home-card-title">{card.title}</IonCardTitle>
+                      <IonCardSubtitle className="home-card-subtitle">{card.subtitle}</IonCardSubtitle>
+                    </IonCardHeader>
+                    <IonCardContent>
+                     
+                    </IonCardContent>
+                  </IonCard>
+                </IonCol>
+              ))}
+          </IonRow>
+        </IonGrid>
+      </IonContent>
+    </IonPage>
+  );
+};
+
+export default Home;
