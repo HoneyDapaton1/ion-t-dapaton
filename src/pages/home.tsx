@@ -24,28 +24,24 @@ import './home.css';
 const cardData = [
   {
     title: 'Click Counter',
-    icon: speedometerOutline,
     subtitle: 'Click! Click! Click!',
     link: '/ClickCounter',
     imgSrc: '../src/assets/img/clickcounter.gif',
   },
   {
     title: 'Calculator',
-    icon: calculator,
     subtitle: 'Calculate! Calculate! Calculate!',
     link: '/Calculator',
     imgSrc: '../src/assets/img/calculator.gif',
   },
   {
     title: 'To Do List',
-    icon: listCircleOutline,
     subtitle: 'Work! Work! Work!',
     link: '/TodoList',
     imgSrc: '../src/assets/img/todolist.gif',
   },
   {
     title: 'Quote Generator',
-    icon: chatbubble,
     subtitle: 'Get inspired!',
     link: '/QuotesGenerator',
     imgSrc: '../src/assets/img/qg.gif',
@@ -85,18 +81,15 @@ const Home: React.FC = () => {
             {cardData
               .filter((card) => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
               .map((card, index) => (
-                <IonCol size="12" size-md="6" size-lg="4" key={index}>
-                  <IonCard routerLink={card.link} routerDirection="forward" className="card-body">
+                <IonCol size="13" size-md="3" size-lg="5" key={index}>
+                  <IonCard  routerLink={card.link} routerDirection="forward" className="card-body">
                     <img alt={card.title} src={card.imgSrc} />
                     <IonCardHeader className="card-header">
-                      <IonIcon className="home-card-icon" icon={card.icon} />
                       <IonCardTitle className="home-card-title">{card.title}</IonCardTitle>
                       <IonCardSubtitle className="home-card-subtitle">{card.subtitle}</IonCardSubtitle>
                     </IonCardHeader>
                     <IonCardContent>
-                      <IonButton expand="full" href={card.link}>
-                        {`Go to ${card.title}`}
-                      </IonButton>
+                     
                     </IonCardContent>
                   </IonCard>
                 </IonCol>
