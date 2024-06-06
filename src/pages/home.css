@@ -1,8 +1,58 @@
-.home-card-title{
-    font-size: 23px;
-    background-color: #fa8dce;
+/* home.css */
+
+.home-page {
+    --ion-background-color: pink;
+  }
+  
+  .header-title {
+    color: white;
+  }
+  
+  .searchbar {
+    --ion-color: pink;
+  }
+  
+  .card-grid {
+    padding: 20px;
+  }
+  
+  .card-body {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
   }
   
   .home-card-icon {
-    font-size: 3rem;
+    font-size: 24px;
+    margin-right: 10px;
+    color: pink;
   }
+  
+  .home-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .home-card-subtitle {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .card-content {
+    padding: 10px;
+  }
+  
+  .card-content img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  
